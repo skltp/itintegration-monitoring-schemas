@@ -14,15 +14,15 @@
 
 	<groupId>se.skltp.itintegration.monitoring</groupId>
   	<artifactId>ServiceContracts_itintegration_monitoring</artifactId>
-	<version>1.0-RC2-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
   	<url>http://skltp.se</url>
 
 	<scm>
-		<connection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</connection>
-		<developerConnection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</developerConnection>
-		<url>http://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</url>
+		<connection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/tags/ServiceContracts_itintegration_monitoring-1.0</connection>
+		<developerConnection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/tags/ServiceContracts_itintegration_monitoring-1.0</developerConnection>
+		<url>http://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/tags/ServiceContracts_itintegration_monitoring-1.0</url>
 	</scm>
 
 	<properties>
