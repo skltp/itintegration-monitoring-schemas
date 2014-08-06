@@ -14,7 +14,7 @@
 
 	<groupId>se.skltp.itintegration.monitoring</groupId>
   	<artifactId>ServiceContracts_itintegration_monitoring</artifactId>
-	<version>1.0-RC2-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
   	<url>http://skltp.se</url>
