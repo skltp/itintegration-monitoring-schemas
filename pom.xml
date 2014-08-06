@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT 
+	YOU ARE DOING! [soi-toolkit.gen.version=0.3.1] [soi-toolkit.gen.type=schemas] 
+	[soi-toolkit.gen.createDate=2011-07-29T14:29:37.643+02:00] [soi-toolkit.gen.artifactId=getsupportedservicecontracts] -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.soitoolkit.commons.poms</groupId>
+		<artifactId>soitoolkit-default-parent</artifactId>
+		<version>0.6.1</version>
+	</parent>
+
+	<groupId>se.skltp.itintegration.monitoring</groupId>
+  	<artifactId>ServiceContracts_itintegration_monitoring</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}</name>
+  	<url>http://skltp.se</url>
+
+	<scm>
+		<connection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</connection>
+		<developerConnection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</developerConnection>
+		<url>http://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</url>
+	</scm>
+
+	<properties>
+		<!-- Properties for generating code from WSDL and XML Schemas (JAX-WS + 
+			JAXB) -->
+		<schema.path>${basedir}/src/main/resources/ServiceContracts_itintegration_monitoring</schema.path>
+		<schema.gen.src.dir>${project.build.directory}/generated-sources/cxf</schema.gen.src.dir>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+							
+							<wsdlOptions>
+
+								<wsdlOption>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:PingForConfiguration:1:rivtabp20=se.riv.itintegration.monitoring.rivtabp20.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:PingForConfigurationResponder:1=se.riv.itintegration.monitoring.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:1=se.riv.itintegration.monitoring.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											http://www.w3.org/2005/08/addressing=org.w3c.addressing.v1
+										</extraarg>
+									</extraargs>
+									<wsdl>${schema.path}/interactions/PingForConfigurationInteraction/PingForConfigurationInteraction_1.0_RIVTABP20.wsdl</wsdl>
+								</wsdlOption>
+								<wsdlOption>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:PingForConfiguration:1:rivtabp21=se.riv.itintegration.monitoring.rivtabp21.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:PingForConfigurationResponder:1=se.riv.itintegration.monitoring.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:monitoring:1=se.riv.itintegration.monitoring.v1
+										</extraarg>
+										<extraarg>-p</extraarg>
+										<extraarg>
+											urn:riv:itintegration:registry:1=se.riv.itintegration.registry.v1
+										</extraarg>
+									</extraargs>
+									<wsdl>${schema.path}/interactions/PingForConfigurationInteraction/PingForConfigurationInteraction_1.0_RIVTABP21.wsdl</wsdl>
+								</wsdlOption>									
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
