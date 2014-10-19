@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT 
-	YOU ARE DOING! [soi-toolkit.gen.version=0.3.1] [soi-toolkit.gen.type=schemas] 
+<!-- DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT
+	YOU ARE DOING! [soi-toolkit.gen.version=0.3.1] [soi-toolkit.gen.type=schemas]
 	[soi-toolkit.gen.createDate=2011-07-29T14:29:37.643+02:00] [soi-toolkit.gen.artifactId=getsupportedservicecontracts] -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -20,19 +20,35 @@
   	<url>http://skltp.se</url>
 
 	<scm>
-		<connection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</connection>
-		<developerConnection>scm:svn:https://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</developerConnection>
-		<url>http://skltp.googlecode.com/svn/tp/itintegration-monitoring-schemas/trunk</url>
+		<url>http://github.com/skltp/itintegration-monitoring-schemas</url>
+		<connection>scm:git:git://github.com/skltp/itintegration-monitoring-schemas.git</connection>
+		<developerConnection>scm:git:git://github.com/skltp/itintegration-monitoring-schemas.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
-		<!-- Properties for generating code from WSDL and XML Schemas (JAX-WS + 
+		<!-- Properties for generating code from WSDL and XML Schemas (JAX-WS +
 			JAXB) -->
 		<schema.path>${basedir}/src/main/resources/ServiceContracts_itintegration_monitoring</schema.path>
 		<schema.gen.src.dir>${project.build.directory}/generated-sources/cxf</schema.gen.src.dir>
 	</properties>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.5.1</version>
+						<configuration>
+								<autoVersionSubmodules>true</autoVersionSubmodules>
+								<tagNameFormat>v@{project.version}</tagNameFormat>
+								<pushChanges>false</pushChanges>
+								<localCheckout>true</localCheckout>
+						</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
@@ -43,7 +59,7 @@
 						<phase>generate-sources</phase>
 						<configuration>
 							<sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
-							
+
 							<wsdlOptions>
 
 								<wsdlOption>
@@ -87,7 +103,7 @@
 										</extraarg>
 									</extraargs>
 									<wsdl>${schema.path}/interactions/PingForConfigurationInteraction/PingForConfigurationInteraction_1.0_RIVTABP21.wsdl</wsdl>
-								</wsdlOption>									
+								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
 						<goals>
